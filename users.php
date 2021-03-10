@@ -13,7 +13,7 @@ if( isset($_POST['delete'])){
 	}
 }
 ?>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <?php
 $sql 	= "SELECT * FROM users";
 $result = $con->query($sql);
@@ -46,7 +46,7 @@ if( $result->num_rows > 0)
 		} else {
 			$status = "Active";
 		}
-		echo "<td class='status_".$row['user_id']."'><a href='update_status.php?status=".$row['status']."&id=".$row['user_id']."'>".$status."</a></td>";
+		echo "<td><a href='update_status.php?status=".$row['status']."&id=".$row['user_id']."'>".$status."</a></td>";
 		echo "<td><input type='submit' name='delete' value='Delete' class='btn btn-danger' /></td>";
 		echo "<td><a href='edit.php?id=".$row['user_id']."' class='btn btn-info'>Edit</a></td>";
 		echo "</tr>";
